@@ -1,0 +1,42 @@
+/*!*****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/flex.scss ***!
+  \*****************************************************************************************************************************************************/
+@media only screen and (max-width: 1007px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .desktop-relative {
+    position: relative;
+  }
+}
+.flex, .flex-wrap {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
+.flex-0 {
+  flex: 0 0 0;
+}
+
+@media only screen and (max-width: 1007px) {
+  .mobile-flex-col,
+.mobile-flex-col * {
+    flex-direction: column;
+  }
+}

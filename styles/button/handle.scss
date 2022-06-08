@@ -1,0 +1,33 @@
+:root {
+    --handle-bg: green;
+    --handle-fg: white;
+}
+
+.handle {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--handle-bg);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--handle-fg);
+    border-radius: 0.5rem;
+    z-index: 50;
+    opacity: 0.5;
+
+    &--active,
+    &--active > .handle {
+        opacity: 1;
+    }
+
+    &--left-edge {
+        border-radius: 0.5rem 0 0 0.5rem;
+        left: 0;
+    }
+
+    &--right-edge {
+        border-radius: 0.5rem 0 0 0.5rem;
+        right: 100%;
+    }
+}

@@ -1,0 +1,96 @@
+/*!**************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/navbar/navbar.scss ***!
+  \**************************************************************************************************************************************************************/
+@media only screen and (max-width: 1007px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .desktop-relative {
+    position: relative;
+  }
+}
+.navbar {
+  --snapatoms-navbar-bg: transparent;
+  --snapatoms-navbar-fg: inherit;
+  position: relative;
+  transition: 250ms all;
+  background-color: var(--snapatoms-navbar-bg);
+}
+.navbar__inner {
+  width: 100%;
+  display: flex;
+}
+@media only screen and (max-width: 1007px) {
+  .navbar__inner {
+    flex-direction: column;
+  }
+}
+.navbar__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+@media only screen and (max-width: 1007px) {
+  .navbar__group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.navbar__link {
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+}
+.navbar__item {
+  pointer-events: auto;
+  position: relative;
+}
+.navbar__nested {
+  pointer-events: auto;
+  display: none;
+}
+@media only screen and (max-width: 1007px) {
+  .navbar--mobile-bordered .navbar__item {
+    border-bottom: 1px solid #4e4e4e;
+  }
+  .navbar__item .navbar__item {
+    box-sizing: border-box;
+    padding: 0 0 0 1rem;
+  }
+  .navbar__item {
+    width: 100%;
+  }
+}
+.navbar__nested {
+  position: relative;
+  padding: 0;
+}
+@media only screen and (min-width: 1007px) {
+  .navbar__nested {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 100;
+    display: none;
+    background-color: var(--theme-bg);
+  }
+  .navbar__item:hover > .navbar__nested, .navbar__nested:hover {
+    display: block;
+  }
+}
+.navbar--show + .navbar__nested {
+  display: block;
+}
+.navbar--show > .navbar__nested {
+  display: block;
+}

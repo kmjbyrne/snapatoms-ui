@@ -1,0 +1,70 @@
+/*!************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/panel/panel.scss ***!
+  \************************************************************************************************************************************************************/
+@media only screen and (max-width: 1007px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .desktop-relative {
+    position: relative;
+  }
+}
+:root {
+  --snapatoms-panel-shadow: 0 0 0.25rem 0 #8a888869;
+}
+
+.panel {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+  padding: 1.5rem;
+  box-shadow: var(--snapatoms-panel-shadow);
+  background-color: var(--snapatoms-panel-bg, transparent);
+}
+.panel h1,
+.panel h2,
+.panel h3,
+.panel h4,
+.panel h5,
+.panel h6,
+.panel p {
+  margin: 0 0 0.5rem 0;
+}
+.panel h3 {
+  margin: 0;
+}
+@media only screen and (max-width: 1007px) {
+  .panel-mobile {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    padding: 1.5rem;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.5rem;
+    background-color: var(--snapatoms-panel-bg, transparent);
+  }
+}
+@media only screen and (min-width: 1007px) {
+  .panel-desktop {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    padding: 1.5rem;
+    box-shadow: var(--snapatoms-panel-shadow), var(--snapatoms-panel-shadow);
+    background-color: var(--snapatoms-panel-bg, transparent);
+  }
+}

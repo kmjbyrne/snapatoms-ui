@@ -1,0 +1,91 @@
+@import "../helpers";
+
+.navbar {
+    --snapatoms-navbar-bg: transparent;
+    --snapatoms-navbar-fg: inherit;
+
+    position: relative;
+    transition: 250ms all;
+    background-color: var(--snapatoms-navbar-bg);
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        @include below-large {
+            flex-direction: column;
+        }
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+        @include below-large {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__link {
+        padding: 1rem;
+        // color: var(--snapatoms-navbar-fg, inherit);
+        text-decoration: none;
+        display: block;
+    }
+
+    &__item {
+        // flex: 1;
+        // width: 100%;
+        pointer-events: auto;
+        position: relative;
+    }
+
+    &__nested {
+        pointer-events: auto;
+        display: none;
+    }
+
+    @include below-large {
+        &--mobile-bordered &__item {
+            border-bottom: 1px solid rgb(78, 78, 78);
+        }
+        &__item &__item {
+            box-sizing: border-box;
+            padding: 0 0 0 1rem;
+        }
+
+        &__item {
+            width: 100%;
+        }
+    }
+
+    &__nested {
+        position: relative;
+        padding: 0;
+    }
+
+    @include from-large {
+        &__nested {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            z-index: 100;
+            display: none;
+            background-color: var(--theme-bg);
+        }
+
+        &__item:hover > &__nested,
+        &__nested:hover {
+            display: block;
+        }
+    }
+
+    &--show + &__nested {
+        display: block;
+    }
+
+    &--show > &__nested {
+        display: block;
+    }
+}

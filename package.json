@@ -1,0 +1,44 @@
+{
+    "name": "@snapatoms/ui",
+    "version": "1.0.0",
+    "description": "",
+    "main": "lib/index.js",
+    "style": "dist/styles.bundle.css",
+    "scripts": {
+        "build": "./node_modules/.bin/webpack --progress --profile --mode development --config webpack.config.js",
+        "build:watch": "./node_modules/.bin/webpack --progress --profile --mode development --config webpack.config.js --watch",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "files": [
+        "./dist",
+        "./styles"
+    ],
+    "author": "",
+    "license": "MIT",
+    "prettier": {
+        "semi": true,
+        "tabWidth": 4,
+        "singleQuote": false
+    },
+    "dependencies": {
+        "postcss-loader": "^6.2.1",
+        "precss": "^4.0.0",
+        "sass": "^1.49.9",
+        "sass-loader": "^12.6.0",
+        "webpack": "^5.70.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.4",
+        "babel-loader": "^8.2.4",
+        "css-loader": "^6.7.1",
+        "generate-package-json-webpack-plugin": "^2.6.0",
+        "html-webpack-plugin": "^5.5.0",
+        "http-server": "^14.1.0",
+        "mini-css-extract-plugin": "^2.6.0",
+        "node-sass": "^7.0.1",
+        "style-loader": "^3.3.1",
+        "url-loader": "^4.1.1",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4"
+    }
+}

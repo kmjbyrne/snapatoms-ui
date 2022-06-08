@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+@import "./layout";
+@import "./typography";
+@import "./button/button";
+@import "./button/expand";
+@import "./button/handle";
+@import "./menu/hamburger";
+@import "./menu/menu";
+@import "./menu/drawer";
+@import "./panel/panel";
+@import "./accordion/accordion";
+@import "./navbar/navbar";
+@import "./header/header";
+@import "./notice/notice";
+@import "./dock/dock";
+@import "./table/table";
+@import "./form/form";
+
+// special FX and other things
+@import "fx/spinner";
+
+@import "./styles";
+@import "./flex";
+@import "./content";
+@import "./theme";
+@import "./modifiers";
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    // font-family: "Lato", sans-serif;
+}
+
+.font-lato {
+    font-family: Lato, sans-serif;
+}

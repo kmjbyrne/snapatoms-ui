@@ -1,0 +1,20 @@
+[
+  {
+    "name": "accordion",
+    "path": "/accordion",
+    "component": "/Users/keith/Development/libraries/ui/snapatoms-ui/docs/pages/accordion.vue",
+    "chunkName": "pages/accordion"
+  },
+  {
+    "name": "panel",
+    "path": "/panel",
+    "component": "/Users/keith/Development/libraries/ui/snapatoms-ui/docs/pages/panel.vue",
+    "chunkName": "pages/panel"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/keith/Development/libraries/ui/snapatoms-ui/docs/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]

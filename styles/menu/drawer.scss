@@ -1,0 +1,47 @@
+@import "../helpers";
+
+.drawer-mobile,
+.drawer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.drawer-mobile {
+    @include below-large {
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        transition: 100ms;
+        transform: translateX(-100%);
+
+        &__content {
+            overflow: scroll;
+        }
+
+        &--right {
+            right: 0;
+            transform: none;
+            left: 100%;
+            // transform: translateX(-100%);
+        }
+
+        &--open {
+            transform: translateX(0%);
+        }
+
+        &--overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}

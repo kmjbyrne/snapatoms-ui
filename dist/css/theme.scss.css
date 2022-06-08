@@ -1,0 +1,143 @@
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/theme.scss ***!
+  \******************************************************************************************************************************************************/
+@media only screen and (max-width: 1007px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .desktop-relative {
+    position: relative;
+  }
+}
+:root {
+  --theme-lighten-factor: 1;
+  --charcoal-bg-color: #353535;
+  --charcoal-fg-color: rgb(226, 226, 226);
+  --navy-bg-color: #141728;
+  --navy-fg-color: #ccc;
+  --theme-alert-bg: goldenrod;
+  --theme-alert-dark-bg: rgb(179, 128, 0);
+  --theme-info-bg: rgb(0, 140, 255);
+  --theme-info-dark-bg: rgb(0, 115, 205);
+}
+
+.alert {
+  background-color: var(--theme-alert-bg);
+}
+
+.info {
+  background-color: var(--theme-info-bg);
+}
+
+.charcoal {
+  background-color: #353535;
+  color: #e2e2e2;
+}
+
+@media only screen and (max-width: 1007px) {
+  .mobile-charcoal {
+    background-color: var(--charcoal-bg-color);
+    color: var(--charcoal-fg-color);
+  }
+  .mobile-charcoal .border-bottom-dashed {
+    border-color: #585858;
+  }
+
+  .mobile-navy {
+    background-color: var(--navy-bg-color);
+    color: var(--navy-fg-color);
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .mobile-bg-white {
+    background-color: white;
+  }
+
+  .mobile-fg-white {
+    background-color: white;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .desktop-bg-white {
+    background-color: white;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .mobile-bg-black {
+    background-color: black;
+  }
+
+  .mobile-fg-black {
+    background-color: black;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .desktop-bg-black {
+    background-color: black;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .mobile-bg-green {
+    background-color: green;
+  }
+
+  .mobile-fg-green {
+    background-color: green;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .desktop-bg-green {
+    background-color: green;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .mobile-bg-red {
+    background-color: red;
+  }
+
+  .mobile-fg-red {
+    background-color: red;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .desktop-bg-red {
+    background-color: red;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .mobile-bg-cyan {
+    background-color: cyan;
+  }
+
+  .mobile-fg-cyan {
+    background-color: cyan;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .desktop-bg-cyan {
+    background-color: cyan;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .mobile-bg-yellow {
+    background-color: yellow;
+  }
+
+  .mobile-fg-yellow {
+    background-color: yellow;
+  }
+}
+@media only screen and (max-width: 1007px) {
+  .desktop-bg-yellow {
+    background-color: yellow;
+  }
+}

@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+
+    &__group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+
+    &__item {
+        flex: 1;
+    }
+
+    &__link {
+        display: block;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,47 @@
+@import "../helpers";
+
+.dock {
+    position: fixed;
+    right: 100px;
+    width: 300px;
+
+    min-height: 100px;
+    transform: translate(-50%, 95%);
+    bottom: 0;
+    font-size: 13px !important;
+    border-radius: 5px 5px 0 0;
+
+    --snapatoms-dock-bg: #1a1a1a;
+    --snapatoms-dock-fg: white;
+    background-color: var(--snapatoms-dock-bg);
+    color: var(--snapatoms-dock-fg);
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3) !important;
+
+    &__toggle {
+        border-radius: 5px 5px 0 0;
+        background-color: var(--snapatoms-dock-bg);
+        text-align: center;
+        position: absolute;
+        top: -18px;
+        right: 20px;
+        width: 40px;
+        height: 18px;
+        padding-top: 2px;
+        cursor: pointer;
+        border: none;
+    }
+
+    @include below-large {
+        right: auto;
+        left: 50%;
+    }
+
+    &--open {
+        transform: translateX(-50%);
+        @include below-large {
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

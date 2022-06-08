@@ -1,0 +1,14 @@
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/helpers.scss ***!
+  \********************************************************************************************************************************************************/
+@media only screen and (max-width: 1007px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1007px) {
+  .mobile-only {
+    display: none !important;
+  }
+}

@@ -1,0 +1,54 @@
+@import "../helpers";
+
+:root {
+    --menu-bg-color: #272822;
+    --menu-fg-color: white;
+    --menu-fg-secondary-color: goldenrod;
+    --menu-fg-tertiary-color: cyan;
+}
+
+.menu {
+    background-color: var(--menu-bg-color);
+    color: var(--menu-fg-color);
+    height: 100%;
+    white-space: nowrap;
+    overflow-y: hidden;
+    box-sizing: border-box;
+
+    &__inner {
+        position: relative;
+    }
+
+    width: 4rem;
+    transition: 200ms all;
+
+    @include from-large {
+        &--desktop-open,
+        &--open {
+            width: 20rem;
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        height: 100%;
+        z-index: 100;
+    }
+
+    @include below-large {
+        width: 75%;
+        transform: translateX(-100%);
+
+        &--open {
+            transform: translateX(0);
+        }
+    }
+
+    &--hidden {
+        p,
+        ul,
+        li {
+            display: none;
+        }
+    }
+}

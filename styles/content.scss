@@ -1,0 +1,395 @@
+@import "./helpers";
+
+// for all the fixed, absolute, padding and margin
+$cardinals: "top", "right", "bottom", "left";
+$sizes: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+$large: 100, 200, 300, 400, 500, 1000;
+$angles: 0, 45, 90, 135, 180, 225, 270, 360;
+
+%_border-base {
+    border-color: #e5e7eb;
+}
+
+%_fixed {
+    position: fixed;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.border-dashed {
+    border-style: dashed;
+    border-width: 0;
+}
+
+@each $size in $sizes {
+    @include from-large {
+        .desktop-w#{$size} {
+            width: unquote("#{$size}0%");
+        }
+        .desktop-p#{$size} {
+            padding: #{$size}rem;
+        }
+    }
+
+    @include below-large {
+        .mobile-m#{$size} {
+            margin: #{$size}rem;
+        }
+    }
+
+    .m#{$size}-tb-all > * {
+        margin: #{$size}rem 0;
+    }
+    .p#{$size}-tb-all > * {
+        padding: #{$size}rem 0;
+    }
+
+    .p-tb-#{$size} {
+        padding: #{$size}rem 0;
+    }
+    .p0-tb-#{$size} {
+        padding: unquote("0.#{$size}rem") 0 unquote("0.#{$size}rem") 0;
+    }
+    .p0-rl-#{$size} {
+        padding: 0 unquote("0.#{$size}rem") 0 unquote("0.#{$size}rem");
+    }
+    .m0-tb-#{$size} {
+        margin: unquote("0.#{$size}rem") 0 unquote("0.#{$size}rem") 0;
+    }
+    .m0-rl-#{$size} {
+        margin: 0 unquote("0.#{$size}rem") 0 unquote("0.#{$size}rem");
+    }
+
+    .p-tb-#{$size} {
+        padding: #{$size}rem 0 #{$size}rem 0;
+    }
+    .p-rl-#{$size} {
+        padding: 0 #{$size}rem 0 #{$size}rem;
+    }
+    .m-tb-#{$size} {
+        margin: #{$size}rem 0 #{$size}rem 0;
+    }
+    .m-rl-#{$size} {
+        margin: 0 #{$size}rem 0 #{$size}rem;
+    }
+    .w#{$size} {
+        width: #{$size}rem;
+    }
+    .h#{$size} {
+        height: #{$size}rem;
+    }
+    .s#{$size} {
+        height: #{$size}rem;
+        width: #{$size}rem;
+    }
+    .m#{$size} {
+        margin: #{$size}rem;
+    }
+    .p#{$size} {
+        padding: #{$size}rem;
+    }
+    .m0#{$size} {
+        margin: unquote("0.#{$size}rem");
+    }
+    .p0#{$size} {
+        padding: unquote("0.#{$size}rem");
+    }
+}
+
+@each $dir in $cardinals {
+    @include below-large {
+        .mobile-abs-#{$dir}-0 {
+            position: absolute;
+            #{$dir}: 0;
+        }
+    }
+    @include from-large {
+        .desktop-abs-#{$dir}-0 {
+            position: absolute;
+            #{$dir}: 0;
+        }
+    }
+    @each $xdir in $cardinals {
+        @include below-large {
+            .mobile-fixed-#{$dir}-#{$xdir} {
+                position: fixed;
+                #{$dir}: 0;
+                #{$xdir}: 0;
+            }
+        }
+        @include from-large {
+            .fixed-#{$dir}-#{$xdir}-desktop {
+                position: fixed;
+                #{$dir}: 0;
+                #{$xdir}: 0;
+            }
+        }
+        @include below-large {
+            .fixed-#{$dir}-#{$xdir}-mobile {
+                position: fixed;
+                #{$dir}: 0;
+                #{$xdir}: 0;
+            }
+        }
+        .fixed-#{$dir}-#{$xdir} {
+            position: fixed;
+            #{$dir}: 0;
+            #{$xdir}: 0;
+        }
+
+        .abs-#{$dir}-#{$xdir} {
+            position: absolute;
+            #{$dir}: 0;
+            #{$xdir}: 0;
+        }
+    }
+}
+@each $dir in $cardinals {
+    @include from-large {
+        .desktop-top {
+            #{$dir}: 0;
+        }
+    }
+
+    @include below-large {
+        .mobile-top {
+            #{$dir}: 0;
+        }
+    }
+
+    .fixed-#{$dir} {
+        position: fixed;
+        #{$dir}: 0;
+    }
+
+    @include below-large {
+        .mobile-fixed-#{$dir} {
+            position: fixed;
+            #{$dir}: 0;
+        }
+        .mobile-h100 {
+            height: 100%;
+        }
+    }
+
+    .abs-#{$dir} {
+        position: absolute;
+        #{$dir}: 0;
+    }
+
+    .border-#{$dir} {
+        @extend %_border-base;
+        border-#{$dir}: 1px solid #ccc;
+    }
+
+    .border-#{$dir}-dashed {
+        @extend %_border-base;
+        border-#{$dir}: 1px dashed #ccc;
+    }
+
+    @each $xdir in $cardinals {
+        @include from-large {
+            .fixed-#{$dir}-#{$xdir}-desktop {
+                position: fixed;
+                #{$dir}: 0;
+                #{$xdir}: 0;
+            }
+        }
+        .fixed-#{$dir}-#{$xdir} {
+            position: fixed;
+            #{$dir}: 0;
+            #{$xdir}: 0;
+        }
+
+        .abs-#{$dir}-#{$xdir} {
+            position: absolute;
+            #{$dir}: 0;
+            #{$xdir}: 0;
+        }
+    }
+
+    .mobile-#{$dir}-auto {
+        #{$dir}: auto;
+    }
+
+    @each $size in $sizes {
+        // @each $xdir in $cardinals {
+        //     @include below-large {
+        //         .mobile-fixed-#{$dir}-#{$xdir}-#{$size} {
+        //             position: fixed;
+        //             #{$dir}: #{$size};
+        //             #{$xdir}: #{$size};
+        //         }
+        //         .mobile-fixed-#{$dir}-#{$xdir}-#{$size}0pc {
+        //             position: fixed;
+        //             #{$dir}: unquote("#{$size}0%");
+        //             #{$xdir}: unquote("#{$size}0%");
+        //         }
+        //     }
+        // }
+
+        .fixed-#{$dir}-#{$size} {
+            position: fixed;
+            #{$dir}: #{$size};
+        }
+
+        .fixed-#{$dir}-#{$size}pc {
+            position: fixed;
+            #{$dir}: unquote("#{$size}%");
+        }
+
+        .fixed-#{$dir}-#{$size}0pc {
+            position: fixed;
+            #{$dir}: unquote("#{$size}0%");
+        }
+
+        @include below-large {
+            .mobile-fixed-#{$dir}-#{$size} {
+                position: fixed;
+                #{$dir}: #{$size};
+            }
+            .mobile-fixed-#{$dir}-#{$size}0pc {
+                position: fixed;
+                #{$dir}: unquote("#{$size}0%");
+            }
+            .mobile-fixed-#{$dir}-m#{$size}0pc {
+                position: fixed;
+                #{$dir}: unquote("-#{$size}0%");
+            }
+            .mobile-abs-#{$dir}-#{$size} {
+                position: absolute;
+                #{$dir}: #{$size};
+            }
+            .mobile-abs-#{$dir}-#{$size}0pc {
+                position: absolute;
+                #{$dir}: unquote("#{$size}0%");
+            }
+        }
+
+        .#{$dir}-#{$size}0pc {
+            #{$dir}: unquote("#{$size}0%");
+        }
+        .#{$dir}-#{$size} {
+            #{$dir}: #{$size}rem;
+        }
+        .abs-#{$dir}-#{$size}-neg {
+            position: absolute;
+            #{$dir}: -#{$size}rem;
+        }
+        .abs-#{$dir}-#{$size} {
+            position: absolute;
+            #{$dir}: #{$size}rem;
+        }
+
+        .m#{$size}-#{$dir}-all {
+            *:not(:last-child) {
+                margin-#{$dir}: #{$size}rem;
+            }
+        }
+        .m-#{$dir}-#{$size} {
+            margin-#{$dir}: #{$size}rem;
+        }
+        .p-#{$dir}-#{$size} {
+            padding-#{$dir}: #{$size}rem;
+        }
+    }
+
+    // @include below-large {
+    //     .mobile-fixed-#{$dir}-#{$size} {
+    //         position: fixed;
+    //         #{$dir}: #{$size};
+    //     }
+    //     .mobile-fixed-#{$dir}-#{$size}0pc {
+    //         position: fixed;
+    //         #{$dir}: unquote("#{$size}0%");
+    //     }
+    // }
+}
+
+.hide-right {
+    @extend %_fixed;
+    right: 0;
+}
+
+.fixed-top {
+    @extend %_fixed;
+    top: 0;
+}
+
+.fixed-top-bottom {
+    @extend %_fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.fixed-left-right {
+    @extend %_fixed;
+    left: 0;
+    right: 0;
+}
+
+.fixed-right {
+    @extend %_fixed;
+    right: 0;
+}
+
+.snap-right {
+    @extend %_fixed;
+    left: 100%;
+    right: 0;
+}
+
+@each $size in $large {
+    .z#{$size} {
+        z-index: #{$size};
+    }
+
+    @include from-large {
+        .desktop-z#{$size} {
+            z-index: #{$size};
+        }
+    }
+
+    @include below-large {
+        .mobile-z#{$size} {
+            z-index: #{$size};
+        }
+        // transform classes
+        .mobile-translate-x-#{$size}pc {
+            transform: translateX(unquote("#{$size}%"));
+        }
+        .mobile-translate-x-m#{$size}pc {
+            transform: translateX(unquote("-#{$size}%"));
+        }
+        .mobile-translate-y-#{$size}pc {
+            transform: translateY(unquote("#{$size}%"));
+        }
+        .mobile-translate-y-m#{$size}pc {
+            transform: translateY(unquote("-#{$size}%"));
+        }
+    }
+}
+
+.pad-all-right {
+    & > * {
+        padding: 0 0.5rem 0 0;
+    }
+}
+
+.pad-all--not-first {
+    & > *:first-child {
+        padding-left: 0;
+    }
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-item {
+        flex-grow: 1;
+    }
+}

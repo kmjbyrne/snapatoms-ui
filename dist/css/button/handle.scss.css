@@ -1,0 +1,32 @@
+/*!**************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/button/handle.scss ***!
+  \**************************************************************************************************************************************************************/
+:root {
+  --handle-bg: green;
+  --handle-fg: white;
+}
+
+.handle {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--handle-bg);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--handle-fg);
+  border-radius: 0.5rem;
+  z-index: 50;
+  opacity: 0.5;
+}
+.handle--active, .handle--active > .handle {
+  opacity: 1;
+}
+.handle--left-edge {
+  border-radius: 0.5rem 0 0 0.5rem;
+  left: 0;
+}
+.handle--right-edge {
+  border-radius: 0.5rem 0 0 0.5rem;
+  right: 100%;
+}

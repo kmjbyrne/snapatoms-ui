@@ -1,0 +1,47 @@
+.expand {
+    &::after {
+        float: right;
+        color: #777;
+        font-weight: bold;
+        // float: right;
+        // margin-left: 5px;
+        transition: 200ms;
+        content: "+";
+        padding: 0 0.5rem;
+    }
+
+    &--center::after {
+        float: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &--active::after {
+        transform: rotate(180deg);
+        content: "-";
+    }
+}
+
+.expand-box {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0.1rem 0.3rem;
+    margin: 0 0.25rem;
+    color: black;
+
+    &::after {
+        content: "+";
+    }
+}
+
+.expand-container:hover .expand-box {
+    border-color: black;
+}
+
+.expand--hidden {
+    .expand::after {
+        display: none;
+    }
+}

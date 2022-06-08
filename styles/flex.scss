@@ -1,0 +1,25 @@
+@import "./helpers";
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    @extend .flex;
+    flex-wrap: wrap;
+}
+
+.flex-inline {
+    display: inline-flex;
+}
+
+.flex-0 {
+    flex: 0 0 0;
+}
+
+@include below-large {
+    .mobile-flex-col,
+    .mobile-flex-col * {
+        flex-direction: column;
+    }
+}

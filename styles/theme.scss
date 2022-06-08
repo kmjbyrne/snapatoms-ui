@@ -1,0 +1,67 @@
+@import "./helpers";
+
+:root {
+    --theme-lighten-factor: 1;
+    --charcoal-bg-color: #353535;
+    --charcoal-fg-color: rgb(226, 226, 226);
+    --navy-bg-color: #141728;
+    --navy-fg-color: #ccc;
+    --theme-alert-bg: goldenrod;
+    --theme-alert-dark-bg: rgb(179, 128, 0);
+    --theme-info-bg: rgb(0, 140, 255);
+    --theme-info-dark-bg: rgb(0, 115, 205);
+}
+
+.alert {
+    background-color: var(--theme-alert-bg);
+}
+
+.info {
+    background-color: var(--theme-info-bg);
+}
+
+$bgs: "white", "black", "green", "red", "cyan", "yellow";
+
+%charcoal {
+    background-color: #353535;
+    color: rgb(226, 226, 226);
+}
+
+.charcoal {
+    @extend %charcoal;
+}
+
+%navy {
+    background-color: #141728;
+    color: #ccc;
+}
+
+@include below-large {
+    .mobile-charcoal {
+        background-color: var(--charcoal-bg-color);
+        color: var(--charcoal-fg-color);
+        .border-bottom-dashed {
+            border-color: rgb(88, 88, 88);
+        }
+    }
+    .mobile-navy {
+        background-color: var(--navy-bg-color);
+        color: var(--navy-fg-color);
+    }
+}
+
+@each $color in $bgs {
+    @include below-large {
+        .mobile-bg-#{$color} {
+            background-color: unquote($color);
+        }
+        .mobile-fg-#{$color} {
+            background-color: unquote($color);
+        }
+    }
+    @include below-large {
+        .desktop-bg-#{$color} {
+            background-color: unquote($color);
+        }
+    }
+}
